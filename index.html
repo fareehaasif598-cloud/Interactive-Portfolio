@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio — Your Name</title>
+  <meta name="description" content="Personal portfolio — WEB101 Week 6 assignment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER
+       ✏️  Change "Your Name" to your actual name in the nav-brand.
+       ============================================================ -->
+  <header class="site-header">
+    <nav class="nav-bar">
+      <a href="#" class="nav-brand">Fareeha<span class="accent">Asif</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       HERO / ABOUT
+       ✏️  Update the heading, subtitle, and skill tags.
+       ============================================================ -->
+  <section class="hero" id="about">
+    <div class="hero-inner">
+      <span class="hero-eyebrow">Web Developer</span>
+      <h1 class="hero-heading">Hi, I'm <span class="accent">Fareeha Asif</span>.</h1>
+      <p class="hero-sub">I build clean, responsive websites and interactive web apps.
+        Currently completing the WEB101 Full-Stack Web Development bootcamp.</p>
+      <div class="skill-tags">
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">Responsive Design</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS SECTION
+       Do not change the id attributes — app.js targets them.
+
+       IDs to know:
+         #filter-group  → container for the filter buttons
+         #search-input  → live search field
+         #results-count → "Showing X of Y projects" text
+         #project-grid  → EMPTY — JavaScript fills this with cards
+       ============================================================ -->
+  <section class="projects-section" id="projects">
+    <div class="section-inner">
+
+      <div class="section-header">
+        <h2 class="section-title">My Projects</h2>
+        <p class="section-desc">Everything I've built — click a category to filter.</p>
+      </div>
+
+      <!-- Controls row: filter buttons + search -->
+      <div class="controls">
+
+        <!-- Filter buttons — data-filter attribute drives the JavaScript logic -->
+        <div class="filter-group" id="filter-group">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="html">HTML</button>
+          <button class="filter-btn" data-filter="css">CSS</button>
+          <button class="filter-btn" data-filter="javascript">JavaScript</button>
+        </div>
+
+        <!-- Search input -->
+        <div class="search-wrapper">
+          <span class="search-icon">&#x2315;</span>
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Search projects… (Esc to clear)"
+            autocomplete="off"
+          >
+        </div>
+
+        <!-- Results count — updated by JavaScript -->
+        <p class="results-count" id="results-count"></p>
+
+      </div>
+
+      <!-- Project grid — starts empty, filled by JavaScript -->
+      <div class="project-grid" id="project-grid">
+        <!-- Cards are inserted here by app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+       ✏️  Update the email address and social links.
+       ============================================================ -->
+  <section class="contact-section" id="contact">
+    <div class="section-inner contact-inner">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-sub">Open to freelance projects, internships, and full-time roles.</p>
+      <a href="mailto:fareehaasif_598@hotmail.com" class="contact-btn">Say Hello &#x2192;</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER — ✏️  Update year and your name.
+       ============================================================ -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Fareeha Asif. Built for WEB101.</p>
+  </footer>
+
+  <!-- Your JavaScript — all code goes in app.js -->
+  <script src="app.js"></script>
+
+</body>
+</html>
