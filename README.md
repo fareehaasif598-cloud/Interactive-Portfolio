@@ -5,6 +5,11 @@ This is my Week 6 Interactive Portfolio assignment. The project uses JavaScript 
 
 Users can filter the projects by HTML, CSS, or JavaScript, and use the search bar to find projects by title or description.
 
+## GitHub API Integration
+This project includes a GitHub Repositories section that fetches my real repositories from the GitHub API using fetch, async/await, and JavaScript DOM rendering.
+
+The repository cards are created with JavaScript, so when I add new public repositories to GitHub, they can appear on the portfolio without hardcoding new cards in the HTML.
+
 ## Features
 - Dynamic project cards
 - Technology filter buttons
@@ -26,3 +31,6 @@ https://fareehaasif598-cloud.github.io/Interactive-Portfolio/
 
 ### Search Returning Results 
 ![Search results for quiz](screenshot/Search.html.png)
+
+### GitHub Repositories Section
+![GitHub repositories section](screenshot/github_repo.png)
