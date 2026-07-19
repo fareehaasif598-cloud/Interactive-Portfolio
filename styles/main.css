@@ -400,3 +400,29 @@ img { max-width: 100%; height: auto; display: block; }
   .controls  { flex-direction: column; align-items: stretch; }
   .search-wrapper { max-width: 100%; }
 }
+
+/* github repo */
+
+.repos-section {
+  background-color: var(--color-bg);
+}
+
+.repo-card:hover {
+  border-color: var(--color-accent);
+}
+
+.repo-stars {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.loading {
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}

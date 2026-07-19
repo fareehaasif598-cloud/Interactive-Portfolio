@@ -280,7 +280,7 @@ return `
     <p class="card-desc">${description}</p>
 
     <div class="card-footer">
-      ${language ? `<span class="tech-tag">${language}</span>` : ''}
+      ${language ? `<span class="tech-tag">${language.toLowerCase()}">${language}</span>` : ''}
       <span class="repo-stars">⭐ ${repo.stargazers_count}</span>
     </div>
 
@@ -293,7 +293,7 @@ return `
       View Repository
     </a>
   </article>
-`;
+  `;
 };
 
 function renderRepos(repos) {
