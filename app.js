@@ -255,3 +255,82 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
 });
+
+// week 7 assigment 
+
+async function fetchRepos(username) {
+  const response = await fetch(`https://api.github.com/users/${username}/repos`);
+
+  if (!response.ok) {
+    throw new Error('Could not load repositories. Please try again later.');
+}
+
+const repos = await response.json();
+return repos;
+}
+
+const repoCard = (repo) => {
+  const description = repo.description ? repo.description : 'No description provided.';
+  const language = repo.language ? repo.language : '';
+  
+return `
+  <article class="card repo-card">
+    <h3 class="card-title">${repo.name}</h3>
+
+    <p class="card-desc">${description}</p>
+
+    <div class="card-footer">
+      ${language ? `<span class="tech-tag">${language}</span>` : ''}
+      <span class="repo-stars">⭐ ${repo.stargazers_count}</span>
+    </div>
+
+    <a
+      class="card-link" 
+      href="${repo.html_url}" 
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      View Repository
+    </a>
+  </article>
+`;
+};
+
+function renderRepos(repos) {
+  const repoGrid = document.getElementById('repo-grid');
+
+  if (repos.length === 0) {
+    repoGrid.innerHTML = `
+      <div class="empty-state">
+        <p>🔍</p>
+        <p>No repositories found.</p>
+      </div>
+    `;
+  } else {
+    repoGrid.innerHTML = repos.map(repoCard).join('');
+  }
+  }
+
+async function initRepos() {
+  const repoGrid = document.getElementById('repo-grid');
+  const reposLoading = document.getElementById('repos-loading');
+
+  try {
+    reposLoading.classList.remove('hidden');
+    const repos = await fetchRepos('fareehaasif598-cloud');
+    renderRepos(repos);
+  } catch (error) {
+    repoGrid.innerHTML = `
+      <div class="empty-state">
+        <p>⚠️</p>
+        <p>${error.message}</p>
+      </div>
+    `;
+  } finally {
+    reposLoading.classList.add('hidden');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initRepos();
+});
